@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern responsive weather application built with HTML, CSS and JavaScript.">
+  <title> Weather App </title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">☁</div>
+        <div>
+          <h1>SkyCast</h1>
+          <p>Simple weather, beautifully presented.</p>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button id="unitToggle" class="unit-toggle" type="button" aria-label="Switch temperature unit">°C</button>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">☾</button>
+      </div>
+    </header>
+
+    <section class="search-section">
+      <form id="searchForm" class="search-box">
+        <span class="search-icon">⌕</span>
+        <input id="cityInput" type="search" placeholder="Search for a city..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <button id="locationBtn" class="location-btn" type="button">◎ Use my location</button>
+    </section>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <section id="weatherContent" class="weather-content" aria-live="polite">
+      <div class="hero-card card">
+        <div class="location-info">
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h2 id="cityName">New Delhi</h2>
+          <p id="dateText">Loading date...</p>
+        </div>
+        <div class="hero-weather">
+          <div id="weatherIcon" class="weather-icon">☀️</div>
+          <div>
+            <div><span id="temperature" class="temperature">--</span><span class="degree">°</span></div>
+            <p id="condition" class="condition">Loading...</p>
+          </div>
+        </div>
+        <p id="feelsLike" class="feels-like">Feels like --°</p>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail-card card">
+          <span>💧</span>
+          <div><p>Humidity</p><strong id="humidity">--%</strong></div>
+        </article>
+        <article class="detail-card card">
+          <span>💨</span>
+          <div><p>Wind Speed</p><strong id="wind">-- km/h</strong></div>
+        </article>
+        <article class="detail-card card">
+          <span>👁️</span>
+          <div><p>Visibility</p><strong id="visibility">-- km</strong></div>
+        </article>
+        <article class="detail-card card">
+          <span>🌡️</span>
+          <div><p>Pressure</p><strong id="pressure">-- hPa</strong></div>
+        </article>
+      </div>
+
+      <section class="forecast-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">UPCOMING DAYS</p>
+            <h2>5-Day Forecast</h2>
+          </div>
+        </div>
+        <div id="forecast" class="forecast-grid"></div>
+      </section>
+    </section>
+
+    <footer>
+      <p>Built with HTML • CSS • JavaScript • DOM • Fetch API</p>
+      <p>Weather app: by OMKAR PANDEY</p>
+    </footer>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
